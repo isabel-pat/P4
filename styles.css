@@ -1,0 +1,505 @@
+/* styles.css */
+
+/* Resetting default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #482957, #111111); /
+    color: #fff; /* Adjust text color for better contrast */
+    
+}
+
+/* Nav-Bar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: transparent; /* Transparent navbar */
+    box-shadow: none; /* Remove navbar shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker on scroll */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05); /* Subtle light shadow on scroll */
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#navbar__logo {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff; /* White logo text */
+}
+
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar__toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff; /* White burger icon */
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.navbar__menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__item {
+    margin: 0 20px;
+}
+
+.navbar__links {
+    text-decoration: none;
+    color: #eee; /* Light grey/white links */
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar__links:hover {
+    color: #20c997; /* Teal hover color */
+}
+
+@media screen and (max-width: 768px) {
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Dark background for mobile menu */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+
+    .navbar__menu.active {
+        display: flex;
+    }
+
+    .navbar__toggle {
+        display: flex;
+    }
+
+    .navbar__item {
+        margin: 20px 0;
+    }
+
+    .navbar__links {
+        padding: 15px;
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    background: url('images/hero-image-dark.jpg') no-repeat center center/cover; /* Darker hero image */
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)); 
+    color: #fff;
+}
+
+.hero__content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero__content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero__content p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* General Section Styles */
+.section {
+    padding: 80px 40px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff; /* White section titles */
+    margin-bottom: 40px;
+}
+
+.section p {
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    color: #eee; /* Light grey paragraph text */
+    line-height: 1.8;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #fff; /* White headings */
+    line-height: 1.3;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #20c997; /* Teal border */
+    background-color: transparent; /* Transparent background */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #20c997; /* Teal background on hover */
+    color: #1a1a1a; /* Dark text on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #1a1a1a; /* Dark footer */
+    color: #eee;
+    font-size: 0.9rem;
+    border-top: 1px solid #333; /* Subtle top border */
+}
+
+/* -------------------- Project Cards (Overlay Style for Index Page) -------------------- */
+#projects .projects__container { /* Target the container specifically within the projects section */
+    display: flex;
+    justify-content: center; /* Center the cards horizontally */
+    gap: 100px; /* Space between the cards */
+    margin-top: 40px;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+}
+.overlay-card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: transparent; /* Initial background is transparent */
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Basic card transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    outline: none;
+    color: inherit;
+    background-size: cover;
+    background-position: center;
+    margin-right: 40px; /*needed to add space in between the cards */
+}
+
+.projects__container .overlay-card:last-child{ /*this removes space from the last card */
+    margin-right: 0;
+}
+
+.overlay-card:focus {
+    outline: none;
+}
+
+.overlay-card:nth-child(1) {
+    background-image: url('images/fish.png');
+}
+
+.overlay-card:nth-child(2) {
+    background-image: url('images/jelly.png');
+}
+
+.overlay-effect { /* Element for the opaque overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Opaque color overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease; /* Fade out the overlay */
+}
+
+.overlay-card:hover .overlay-effect {
+    opacity: 0; /* Make the overlay disappear on hover */
+}
+
+.overlay-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    z-index: 10; /* Ensure text is on top of the overlay */
+}
+
+
+
+/* -------------------- About Section Styles (for about.html) -------------------- */
+.about__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #222; /* Dark background for about section */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.about__image {
+    text-align: center;
+}
+
+.about__image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 5px solid #333;
+}
+
+.about__content {
+    text-align: left;
+}
+
+.about__content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.about__content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #eee;
+    margin-bottom: 20px;
+}
+
+.about__content .btn {
+    margin-top: 0;
+    background-color: transparent;
+    border-color: #20c997;
+    color: #fff;
+}
+
+.about__content .btn:hover {
+    background-color: #20c997;
+    color: #1a1a1a;
+}
+
+/* -------------------- Contact Section Styles (for contact.html) -------------------- */
+#contact {
+    background: radial-gradient(circle, #2d3059, #1a1a1a); 
+    color: #eee;
+}
+
+.contact__container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.contact__container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.contact__container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #eee;
+    margin-bottom: 30px;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact__form input,
+.contact__form textarea {
+    padding: 12px;
+    border: 1px solid #555; /* Darker border for form elements */
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #333; /* Darker input background */
+    color: #eee;
+}
+
+.contact__form textarea {
+    resize: vertical;
+}
+
+.contact__form button {
+    margin-top: 20px;
+    align-self: center;
+    background-color: transparent;
+    border-color: #20c997;
+    color: #fff;
+}
+
+.contact__form button:hover {
+    background-color: #20c997;
+    color: #1a1a1a;
+}
+#contact .contact__info a#linkedin-link {
+    color: #bb20c9;
+}
+#contact .contact__info a#linkedin-link:hover {
+    text-decoration: underline;
+}
+
+/* -------------------- Individual Project Page Styles -------------------- */
+.back-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* -------------------- Java Projects Page Styles -------------------- */
+
+.project-details .projects__container { 
+    display: flex;
+    justify-content: center; /* Center the cards horizontally */
+    gap: 40px; /* Space between the cards */
+    margin-top: 40px;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+.project-details .projects__container .project-card:first-child {
+    margin-right: 40px; /* adds space between the cards */
+}
+
+.project-details {
+    padding: 80px 40px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-details .section__title {
+    margin-bottom: 40px;
+}
+
+.project-details .projects__container { /* Reusing container for layout */
+    display: flex;
+    justify-content: center; /* Center the cards horizontally */
+    gap: 40px; /* Space between the cards */
+    margin-top: 40px;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.project-card {
+    background-color: #222;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 400px; /* Adjust card width as needed */
+    max-width: 100%; /* Make cards responsive */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #eee;
+    margin-bottom: 20px;
+}
+
+.project-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #20c997;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card .btn:hover {
+    background-color: #20c997;
+    color: #1a1a1a;
+}
+
+
